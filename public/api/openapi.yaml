@@ -1,0 +1,155 @@
+openapi: '3.0.1'
+
+info:
+  title: "PokeGo API - Campus Caicó"
+  description: |
+    Esta API fornece acesso aos dados e funcionalidades do projeto PokeGo, uma versão gamificada de Pokémon adaptada ao ambiente escolar do campus Caicó. Através desta API, é possível gerenciar e consultar informações sobre os "pokémons" (professores), incluindo capturas, missões, níveis e estatísticas dos personagens. Os endpoints permitem uma interação completa com o jogo, possibilitando o cadastro de novos usuários, a visualização de detalhes dos personagens, a execução de missões e muito mais, promovendo uma experiência educativa e divertida no ambiente escolar.
+  version: '0.1'
+
+servers:
+  - url: http://{host}:{porta}/api
+    variables:
+      host:
+        default: localhost
+      porta:
+        default: '8000'
+
+paths:
+  /pokemons:
+    get:
+      summary: Acessar os Pokemons.
+      responses:
+        200:
+          description: Ok
+          content:
+            application/json:
+              schema:
+                type: array
+    post:
+      summary: Cadastra um Pokemon.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                    type: string
+                type:
+                    type: string
+                description:
+                    type: string
+                location:
+                    type: string
+                rarity:
+                    type: string
+                base_points:
+                    type: integer
+                health_points:
+                    type: integer
+                attack:
+                    type: integer
+                defense:
+                    type: integer
+      responses:
+        201:
+          description: Pokemon cadastrado.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  location:
+                    description: O URI do novo pokemon cadastrado.
+                    type: string
+  
+  /pokemons/{id}:
+    parameters:
+      - name: id
+        in: path
+        required: True
+        schema:
+          type: string
+    get:
+      summary: Acessa um Pokemon.
+      responses:
+        200:
+          description: Ok
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  name:
+                    type: string
+                  type:
+                      type: string
+                  description:
+                      type: string
+                  location:
+                      type: string
+                  rarity:
+                      type: string
+                  base_points:
+                      type: integer
+                  health_points:
+                      type: integer
+                  attack:
+                      type: integer
+                  defense:
+                      type: integer
+        404:
+          description: Pokemon não encontrado.
+    
+    delete:
+      summary: Apaga um Pokemon.
+      responses:
+        200:
+          description: Ok
+        404:
+          description: Pokemon não encontrado.
+      
+    put:
+      summary: Altera um Pokemon.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                    type: string
+                type:
+                    type: string
+                description:
+                    type: string
+                location:
+                    type: string
+                rarity:
+                    type: string
+                base_points:
+                    type: integer
+                health_points:
+                    type: integer
+                attack:
+                    type: integer
+                defense:
+                    type: integer
+      responses:
+        200:
+          description: Ok
+        404:
+          description: Pokemon não encontrado.
+
+
+    
+
+
+
+
+
+          
+      
+      
