@@ -14,14 +14,17 @@ return new class extends Migration
         Schema::create('pokemon', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('type'); // Tipo (ex.: Matemática, Ciências)
-            $table->text('description')->nullable();
-            $table->string('location'); // Localização no campus
-            $table->string('rarity'); // Raridade (ex.: comum, raro)
-            $table->integer('base_points'); // Pontos concedidos ao jogador ao capturar o pokemon
-            $table->integer('health_points'); // Pontos de saúde
-            $table->integer('attack'); // Valor de ataque
-            $table->integer('defense'); // Valor de defesa
+            $table->string('type');
+            $table->text('description');
+            $table->string('location');
+            $table->string('rarity');
+            $table->integer('base_points');
+            $table->integer('health_points');
+            $table->integer('attack');
+            $table->integer('defense');
+            $table->double('latitude');
+            $table->double('longitude');
+            $table->boolean('captured')->default(false);
             $table->timestamps();
         });
     }

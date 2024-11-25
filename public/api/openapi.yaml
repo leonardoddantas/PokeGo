@@ -142,6 +142,108 @@ paths:
           description: Ok
         404:
           description: Pokemon não encontrado.
+  /pokemons/nearby/{latitude}/{longitude}:
+    get:
+      summary: Obtém Pokémons próximos a uma localização.
+      description: |
+        Retorna uma lista de Pokémons que estão dentro de um raio específico de uma localização fornecida por latitude e longitude.
+      parameters:
+        - name: latitude
+          in: path
+          required: true
+          description: Latitude da localização.
+          schema:
+            type: number
+            format: float
+        - name: longitude
+          in: path
+          required: true
+          description: Longitude da localização.
+          schema:
+            type: number
+            format: float
+      responses:
+        200:
+          description: Lista de Pokémons próximos.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: string
+                    name:
+                      type: string
+                    type:
+                      type: string
+                    description:
+                      type: string
+                    location:
+                      type: string
+                    rarity:
+                      type: string
+                    base_points:
+                      type: integer
+                    health_points:
+                      type: integer
+                    attack:
+                      type: integer
+                    defense:
+                      type: integer
+                    latitude:
+                      type: number
+                      format: float
+                    longitude:
+                      type: number
+                      format: float
+        400:
+          description: Falha na validação dos parâmetros.
+  
+  /pokemons/capture/{id}:
+    post:
+      summary: Captura um Pokémon.
+      description: |
+        Marca o Pokémon identificado pelo `id` como capturado, se ele ainda não tiver sido capturado.
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: ID do Pokémon a ser capturado.
+          schema:
+            type: string
+      responses:
+        200:
+          description: Pokémon capturado com sucesso.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "Pokémon capturado com sucesso!"
+        400:
+          description: Pokémon já capturado ou erro no processo de captura.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "Pokémon já capturado"
+        404:
+          description: Pokémon não encontrado.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "Pokémon não encontrado"
 
 
     
