@@ -23,8 +23,8 @@ class PokemonSeeder extends Seeder
             'health_points' => 150,
             'attack' => 80,
             'defense' => 70,
-            'latitude' => -6.467085,  // Ajustando para mais espalhado
-            'longitude' => -36.937022,  // Ajustando para mais espalhado
+            'latitude' => -6.467085,
+            'longitude' => -36.937022,
         ]);
 
         Pokemon::create([
@@ -37,8 +37,8 @@ class PokemonSeeder extends Seeder
             'health_points' => 140,
             'attack' => 75,
             'defense' => 65,
-            'latitude' => -6.467200,  // Ajustando para mais espalhado
-            'longitude' => -36.937200,  // Ajustando para mais espalhado
+            'latitude' => -6.467200,
+            'longitude' => -36.937200,
         ]);
 
         Pokemon::create([
@@ -51,8 +51,8 @@ class PokemonSeeder extends Seeder
             'health_points' => 145,
             'attack' => 70,
             'defense' => 80,
-            'latitude' => -6.467900,  // Ajustando para mais espalhado
-            'longitude' => -36.937500,  // Ajustando para mais espalhado
+            'latitude' => -6.467900,
+            'longitude' => -36.937500,
         ]);
 
         Pokemon::create([
@@ -65,8 +65,8 @@ class PokemonSeeder extends Seeder
             'health_points' => 130,
             'attack' => 85,
             'defense' => 75,
-            'latitude' => -6.468800,  // Ajustando para mais espalhado
-            'longitude' => -36.937800,  // Ajustando para mais espalhado
+            'latitude' => -6.468800,
+            'longitude' => -36.937800,
         ]);
 
         // Pokémons raros
@@ -80,8 +80,8 @@ class PokemonSeeder extends Seeder
             'health_points' => 120,
             'attack' => 70,
             'defense' => 60,
-            'latitude' => -6.468700,  // Ajustando para mais espalhado
-            'longitude' => -36.938000,  // Ajustando para mais espalhado
+            'latitude' => -6.468700,
+            'longitude' => -36.938000,
         ]);
 
         Pokemon::create([
@@ -94,8 +94,8 @@ class PokemonSeeder extends Seeder
             'health_points' => 125,
             'attack' => 65,
             'defense' => 70,
-            'latitude' => -6.469000,  // Ajustando para mais espalhado
-            'longitude' => -36.938200,  // Ajustando para mais espalhado
+            'latitude' => -6.469000,
+            'longitude' => -36.938200,
         ]);
 
         Pokemon::create([
@@ -108,8 +108,8 @@ class PokemonSeeder extends Seeder
             'health_points' => 130,
             'attack' => 85,
             'defense' => 60,
-            'latitude' => -6.468500,  // Ajustando para mais espalhado
-            'longitude' => -36.938400,  // Ajustando para mais espalhado
+            'latitude' => -6.468500,
+            'longitude' => -36.938400,
         ]);
 
         // Pokémons comuns
@@ -123,8 +123,8 @@ class PokemonSeeder extends Seeder
             'health_points' => 100,
             'attack' => 55,
             'defense' => 60,
-            'latitude' => -6.468700,  // Ajustando para mais espalhado
-            'longitude' => -36.938600,  // Ajustando para mais espalhado
+            'latitude' => -6.468700,
+            'longitude' => -36.938600,
         ]);
 
         Pokemon::create([
@@ -137,8 +137,8 @@ class PokemonSeeder extends Seeder
             'health_points' => 105,
             'attack' => 60,
             'defense' => 65,
-            'latitude' => -6.468900,  // Ajustando para mais espalhado
-            'longitude' => -36.938800,  // Ajustando para mais espalhado
+            'latitude' => -6.468900,
+            'longitude' => -36.938800,
         ]);
     }
 }
