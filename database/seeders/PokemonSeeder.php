@@ -14,80 +14,80 @@ class PokemonSeeder extends Seeder
     {
         // Pokémons lendários
         Pokemon::create([
-            'name' => 'Leonardo',
-            'type' => 'Programação',
-            'description' => 'Gosto de programar, focado em desenvolvimento.',
+            'name' => 'Pikachu',
+            'type' => 'Elétrico',
+            'description' => 'Pikachu é um pokémon elétrico rápido, travesso e sempre alegre.',
             'location' => 'Campus',
             'rarity' => 'legendary',
             'base_points' => 100,
             'health_points' => 150,
             'attack' => 80,
             'defense' => 70,
-            'latitude' => -6.467085,
-            'longitude' => -36.937022,
+            'latitude' => -6.469000,
+            'longitude' => -36.940000,
         ]);
 
         Pokemon::create([
-            'name' => 'Katarina',
-            'type' => 'Programação',
-            'description' => 'Futura médica, mas apaixonada por programação.',
+            'name' => 'Iapur',
+            'type' => 'Ar',
+            'description' => 'Iapur é uma pokémon de ar agressiva e rápida, com memória fotográfica e poder baseado em conhecimento.',
             'location' => 'Campus',
             'rarity' => 'legendary',
             'base_points' => 100,
             'health_points' => 140,
             'attack' => 75,
             'defense' => 65,
-            'latitude' => -6.467200,
+            'latitude' => -6.460000,
             'longitude' => -36.937200,
         ]);
 
         Pokemon::create([
-            'name' => 'Ianny',
-            'type' => 'Programação',
-            'description' => 'Estudante de programação e futura médica.',
+            'name' => 'Katita',
+            'type' => 'Ar',
+            'description' => 'Katita é uma pokémon de ar calma e empática, capaz de ressoar o Eco do Oceano.',
             'location' => 'Campus',
             'rarity' => 'legendary',
             'base_points' => 100,
             'health_points' => 145,
             'attack' => 70,
             'defense' => 80,
-            'latitude' => -6.467900,
-            'longitude' => -36.937500,
+            'latitude' => -6.469000,
+            'longitude' => -36.900000,
         ]);
 
         Pokemon::create([
-            'name' => 'Ingridy',
-            'type' => 'Programação',
-            'description' => 'Apaixonada por tecnologia e saúde.',
+            'name' => 'Bluin',
+            'type' => 'Água',
+            'description' => 'Bluin é uma pokémon de água fofa, com uma brisa congelante e toque de brilho lunar.',
             'location' => 'Campus',
             'rarity' => 'legendary',
             'base_points' => 100,
             'health_points' => 130,
             'attack' => 85,
             'defense' => 75,
-            'latitude' => -6.468800,
-            'longitude' => -36.937800,
+            'latitude' => -6.461000,
+            'longitude' => -36.924000,
         ]);
 
         // Pokémons raros
         Pokemon::create([
-            'name' => 'Ciro',
-            'type' => 'Programação',
-            'description' => 'Professor de API.',
+            'name' => 'Cirol',
+            'type' => 'Terra',
+            'description' => 'Cirol é um Pokémon de terra estrategista, que usa sua timidez e o poder do Lança-Esporos de forma tática.',
             'location' => 'Campus',
             'rarity' => 'rare',
             'base_points' => 80,
             'health_points' => 120,
             'attack' => 70,
             'defense' => 60,
-            'latitude' => -6.468700,
+            'latitude' => -6.465000,
             'longitude' => -36.938000,
         ]);
 
         Pokemon::create([
-            'name' => 'Maíra',
-            'type' => 'Documentos e Gestão de Projetos',
-            'description' => 'Professor de Documentação e Gestão de Projetos.',
+            'name' => 'Mazira',
+            'type' => 'Água',
+            'description' => 'Mazira é uma pokémon de água tranquila e empática, que domina o poder do Eco do Oceano.',
             'location' => 'Campus',
             'rarity' => 'rare',
             'base_points' => 85,
@@ -95,50 +95,21 @@ class PokemonSeeder extends Seeder
             'attack' => 65,
             'defense' => 70,
             'latitude' => -6.469000,
-            'longitude' => -36.938200,
+            'longitude' => -36.938800,
         ]);
 
         Pokemon::create([
-            'name' => 'Iuri',
-            'type' => 'Redes e React',
-            'description' => 'Professor de Redes e React.',
+            'name' => 'Iufire',
+            'type' => 'Fogo',
+            'description' => 'Iufire é um Pokémon de fogo corajoso e competitivo, com o poder intenso do Grito Vulcânico.',
             'location' => 'Campus',
             'rarity' => 'rare',
             'base_points' => 90,
             'health_points' => 130,
             'attack' => 85,
             'defense' => 60,
-            'latitude' => -6.468500,
-            'longitude' => -36.938400,
-        ]);
-
-        // Pokémons comuns
-        Pokemon::create([
-            'name' => 'Huliane',
-            'type' => 'Programação',
-            'description' => 'Professor de Programação.',
-            'location' => 'Campus',
-            'rarity' => 'common',
-            'base_points' => 60,
-            'health_points' => 100,
-            'attack' => 55,
-            'defense' => 60,
-            'latitude' => -6.468700,
-            'longitude' => -36.938600,
-        ]);
-
-        Pokemon::create([
-            'name' => 'Daniel',
-            'type' => 'Programação',
-            'description' => 'Professor de Programação.',
-            'location' => 'Campus',
-            'rarity' => 'common',
-            'base_points' => 60,
-            'health_points' => 105,
-            'attack' => 60,
-            'defense' => 65,
-            'latitude' => -6.468900,
-            'longitude' => -36.938800,
+            'latitude' => -6.469500,
+            'longitude' => -36.940000,
         ]);
     }
 }

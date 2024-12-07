@@ -17,4 +17,9 @@ class Pokemon extends Model
         'attack',
         'defense'
     ];
+
+    public function users()
+    {
+        return $this->belongsToMany(User::class);
+    }
 }

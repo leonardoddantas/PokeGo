@@ -5,8 +5,10 @@ namespace App\Http\Controllers\api;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\PokemonRequest;
 use App\Models\Pokemon;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class PokemonController extends Controller
 {
@@ -71,24 +73,40 @@ class PokemonController extends Controller
             return $distance <= $radius;
         });
 
-        return response()->json($pokemons);
+        return response()->json($pokemons->values());
     }
 
-    public function capture($id)
+    public function capture($id, Request $request)
     {
-        $pokemon = Pokemon::find($id);
+        try {
+            $pokemon = Pokemon::find($id);
+            if (!$pokemon) {
+                return response()->json(['message' => 'Pokémon não encontrado'], 404);
+            }
 
-        if (!$pokemon) {
-            return response()->json(['message' => 'Pokémon não encontrado'], 404);
+            $userId = $request->input('user_id');
+
+            if (!$userId) {
+                return response()->json(['message' => 'ID do usuário não encontrado'], 400);
+            }
+
+            // Encontrar o usuário pelo ID
+            $user = User::find($userId);
+            if (!$user) {
+                return response()->json(['message' => 'Usuário não encontrado'], 404);
+            }
+
+            // Verificar se o usuário já capturou esse Pokémon
+            if ($user->pokemons()->where('pokemon_id', $id)->exists()) {
+                return response()->json(['message' => 'Você já capturou esse Pokémon!'], 400);
+            }
+
+            // Associar o Pokémon ao usuário
+            $user->pokemons()->attach($pokemon);
+
+            return response()->json(['message' => 'Pokémon capturado com sucesso!']);
+        } catch (\Exception $e) {
+            return response()->json(['message' => 'Erro ao capturar o Pokémon: ' . $e->getMessage()], 500);
         }
-
-        if ($pokemon->captured) {
-            return response()->json(['message' => 'Pokémon já capturado'], 400);
-        }
-
-        $pokemon->captured = true;
-        $pokemon->save();
-
-        return response()->json(['message' => 'Pokémon capturado com sucesso!']);
     }
 }
