@@ -90,18 +90,15 @@ class PokemonController extends Controller
                 return response()->json(['message' => 'ID do usuário não encontrado'], 400);
             }
 
-            // Encontrar o usuário pelo ID
             $user = User::find($userId);
             if (!$user) {
                 return response()->json(['message' => 'Usuário não encontrado'], 404);
             }
 
-            // Verificar se o usuário já capturou esse Pokémon
             if ($user->pokemons()->where('pokemon_id', $id)->exists()) {
                 return response()->json(['message' => 'Você já capturou esse Pokémon!'], 400);
             }
 
-            // Associar o Pokémon ao usuário
             $user->pokemons()->attach($pokemon);
 
             return response()->json(['message' => 'Pokémon capturado com sucesso!']);
